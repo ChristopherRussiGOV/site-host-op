@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordem Paranormal - DS</title>
+  <link rel="icon" type="image/png" href="opicon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      color: crimson;
+      font-size: 24px;
+      border-bottom: 2px solid crimson;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: crimson;
+      padding: 15px 20px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: crimson;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 20px auto;
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    main {
+      flex: 3;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    aside {
+      flex: 1;
+      background: #111;
+      border: 1px solid crimson;
+      padding: 15px;
+      height: fit-content;
+      border-radius: 10px;
+    }
+
+    .infobox-title {
+      background: crimson;
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .infobox-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+      padding: 5px 0;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    a {
+      color: #ff4d4d;
+      cursor: pointer;
+    }
+
+    button.back {
+      margin-bottom: 10px;
+      background: crimson;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .card {
+      display: inline-block;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 200px;
+      border: 2px solid crimson;
+      border-radius: 5px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card:hover img {
+      border-color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  📖 Wiki Ordem Paranormal
+</header>
+
+<nav>
+  <button onclick="showTab('home')">Início</button>
+  <button onclick="showTab('personagens')">Personagens</button>
+  <button onclick="showTab('classes')">Classes</button>
+  <button onclick="showTab('rituais')">Rituais</button>
+  <button onclick="showTab('elementos')">Elementos</button>
+</nav>
+
+<div id="home" class="container section active">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Início</h2>
+      <h6 style="color: #7c7c7c; font-style: italic;">Este site foi totalmente baseado em <a href="https://ordemparanormal.fandom.com/wiki/Ordem_Paranormal_Wiki">Fandom Wiki! </a>Possuindo migrações ao site de origem.</h6>
+      <h4>Bem-vindo a Ordem Paranormal Wiki!</h4>
+      <img src="https://static.wikia.nocookie.net/ordemparanormal/images/c/c8/Ordem_Paranormal_Wiki.png/revision/latest/scale-to-width-down/325?cb=20260403030126&path-prefix=pt-br">
+      <p><strong>Ordem Paranormal</strong> é um universo de investigação paranormal criado por Rafael Lange (Cellbit), que teve seu início através de campanhas de RPG de mesa em transmissões ao vivo na Twitch. Um jogo da saga, Enigma do Medo, foi lançado em 28 de novembro de 2024.</p>
+      <h4>Ordo Realitas:</h4>
+      <p>A <strong>Ordo Realitas</strong> (ou simplesmente "A ordem") é a principal organização secreta no universo de Ordem Paranormal dedicada a proteger a humanidade e manter a estabilidade da membrana contra as entidade do outro lado.</p>
+      <p>Objetivo principal: A ordem trabalha nas sombras porque o conhecimento público sobre o Paranormal enfraquece a membrana (a barreira que separa nosso mundo do outro lado). Seus agentes usam disfarces, documentos falsos e até o proprio paranormal para "combater fogo com fogo" e evitar que seitas ocultistas mergulhem o mundo no caos.</p>
+      <ul><li>Liderança: O líder máximo é o enigmático <a onclick="showTab('verissimo')">Senhor Veríssimo</a>.</li></ul>
+      <p style="text-align: center;"><strong>Importante: Esta wiki não é livre de spoilers.</strong></p>
+      <p style="text-align: center;">Aqui você encontra informações sobre todos os personagens, tramas e episódios da série.</p>
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Artigo em destaque</h2>
+      <h4>Arquivos Secretos - Os segredos não contados!</h4>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/6/64/Capa_Arquivos_Secretos.png/revision/latest/scale-to-width-down/200?cb=20251225132107&path-prefix=pt-br">
+      <p>Histórias nunca contadas. Detalhes nunca antes vistos. Segredos até então não esclarecidos. Tudo isso armazenado em um lugar onde apenas um seleto grupo de agentes possui permissão para acessar: esses são os Arquivos Secretos de Ordem Paranormal.</p>
+      <p>Os Arquivos Secretos são um dos novos conteúdos canônicos de Ordem Paranormal no ano de 2026! A cada mês, pacotes de determinado assunto são lançados para enriquecer ainda mais a história e universo de Ordem, também trazendo diversos aspectos de regras de RPG para abrilhantar a história dos fãs. Anunciado no final de 2025, os Arquivos Secretos mostram o que nunca foi mostrado nas transmissões do RPG, como histórias e detalhes de personagens já conhecidos pelo público, explicações dos sistemas usados e adições de conteúdos novos!</p>
+      <p>O primeiro pacote, lançado em janeiro, finalmente contou a história do passado de Agatha após o incidente na Escola Nostradamus e antes dela ingressar na Ordo Realitas, além de introduzir melhor o grupo dos Transtornados, ocultistas obcecados em ter um pacto com o Diabo; o segundo pacote introduziu os conteúdos não vistos em Hexatombe, como os passados dos agentes da Ordem e dos assassinos, mecânicas e conceitos do evento sangrento e a utilização dos poderes de Intenção. Já o terceiro pacote complementa o que o segundo mostrou, introduzindo as histórias das outras equipes participantes do ritual, como PSIKOLERA, Couraças e Pássaros, e mais regras do evento para serem usadas.</p>
+      <p>Para ter esse conteúdo na sua mão, clique <a title="Você será redirecionado!" href="https://site.jamboeditora.com.br/arquivos-secretos/" onclick="return confirm('Você tem certeza que deseja sair deste site?')">aqui</a> e faça bom proveito da permissão concedida a você, agente.</p>
+      <p>ㅤ</p>
+      <h5>Leia o artigo completo <a onclick="showTab('arquivos_secretos')">aqui</a>.</h5>
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Campanhas</h2>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('ordem_paranormal')">
+          <img style="border-radius: 5px;" src="Campanha_A_Ordem_Paranormal.png" alt="A Ordem Paranormal">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('segredo_na_floresta')">
+          <img style="border-radius: 5px;" src="Campanha_O_Segredo_na_Floresta.png" alt="O Segredo na Floresta">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('desconjuracao')">
+          <img style="border-radius: 5px;" src="Campanha_Desconjuracao.png" alt="Desconjuração">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('calamidade')">
+          <img style="border-radius: 5px;" src="Campanha_Calamidade.png" alt="Calamidade">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('segredo_da_ilha')">
+          <img style="border-radius: 5px;" src="Campanha_O_Segredo_na_Ilha.png" alt="O Segredo da Ilha">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('sinais_do_outro_lado')">
+          <img style="border-radius: 5px;" src="Campanha_Sinais_do_Outro_Lado.png" alt="Sinais do Outro Lado">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('quarentena')">
+          <img style="border-radius: 5px;" src="Campanha_Quarentena.png" alt="Quarentena">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('natal_macabro')">
+          <img style="border-radius: 5px;" src="Campanha_Natal_Macabro.png" alt="Natal Macabro">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a class="card" onclick="showTab('hexatombe')">
+          <img style="border-radius: 5px;" src="Campanha_Hexatombe.png" alt="Hexatombe">
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside style="width: auto;">
+      <div class="infobox-title">APOCALIPSE - DATA</div>
+      <img style="border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ2gh0WM66W4Ns3Q3AswaeVrs1Eb1zxuUs-w&s">
+      <div class="infobox-row">Quando conseguirmos traduzir tudo dito em eslavo pelos Vampiros.</div>
+      <div class="infobox-title">Nesse dia...</div>
+      <div class="infobox-row"><span><ul><li>1918 - Virgulino Batista faleceu.</li><li>1918 - Ana Vitória e Lurdete Batista são internadas no Sanatório de Pequena Carpa.</li><li>2020 - A Equipe E explora o Sanatório de Pequena Carpa.</li><li>2020 - Sequestro de Gregório Igorovich pelos Assombrados.</li></ul></span></div>
+      <div class="infobox-title">ENIGMA DO MEDO</div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a title="Você será redirecionado!" href="https://ordemparanormal.fandom.com/wiki/Enigma_do_Medo" onclick="return confirm('Você tem certeza que deseja sair deste site?')">
+          <img style="border-radius: 17.5px; border: 1px solid crimson" src="https://static.wikia.nocookie.net/ordemparanormal/images/6/6c/Campanha_EDM.png/revision/latest/scale-to-width-down/280?cb=20241212043320&path-prefix=pt-br">
+        </a>
+      </div>
+      <div class="infobox-title">GRAPHIC NOVELS</div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a title="Você será redirecionado!" href="https://ordemparanormal.fandom.com/wiki/Ordem_Paranormal:_Inicia%C3%A7%C3%A3o" onclick="return confirm('Você tem certeza que deseja sair deste site?')">
+          <img style="border-radius: 17.5px; border: 1px solid crimson;" src="https://static.wikia.nocookie.net/ordemparanormal/images/9/93/Campanha_Inicia%C3%A7%C3%A3o.png/revision/latest/scale-to-width-down/280?cb=20240402185000&path-prefix=pt-br">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a title="Você será redirecionado!" href="https://ordemparanormal.fandom.com/wiki/O_Segredo_na_Floresta_-_Parte_1_(graphic_novel)" onclick="return confirm('Você tem certeza que deseja sair deste site?')">
+          <img style="border-radius: 17.5px; border: 1px solid crimson;" src="https://static.wikia.nocookie.net/ordemparanormal/images/4/45/Campanha_OSNF_GN.png/revision/latest/scale-to-width-down/280?cb=20240402185012&path-prefix=pt-br">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a title="Você será redirecionado!" href="https://ordemparanormal.fandom.com/wiki/O_Segredo_na_Floresta_-_Parte_2_(graphic_novel)" onclick="return confirm('Você tem certeza que deseja sair deste site?')">
+          <img style="border-radius: 17.5px; border: 1px solid crimson;" src="https://static.wikia.nocookie.net/ordemparanormal/images/8/8f/Campanha_OSNF_GN2.png/revision/latest/scale-to-width-down/280?cb=20240903201937&path-prefix=pt-br">
+        </a>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <a title="Você será redirecionado!" href="https://ordemparanormal.fandom.com/wiki/Desconjura%C3%A7%C3%A3o_-_Parte_1_(graphic_novel)" onclick="return confirm('Você tem certeza que deseja sair deste site?')">
+          <img style="border-radius: 17.5px; border: 1px solid crimson;" src="https://static.wikia.nocookie.net/ordemparanormal/images/6/6e/Campanha_OPD_GN.png/revision/latest/scale-to-width-down/280?cb=20250909003215&path-prefix=pt-br">
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div id="arquivos_secretos" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Arquivos Secretos</h2>
+      <p>Os <strong>Arquivos Secretos</strong> são pacotes de conteúdos canônicos mensais sobre o universo e sistema de Ordem Paranormal, contendo rituais, habilidades, trilhas e histórias sobre o mundo do RPG, desenvolvido pela equipe de Ordem Paranormal em conjunto com a <strong>Jambô Editora.</strong> O primeiro pacote foi lançado em 28 de janeiro de 2026, sendo continuado sempre na última quarta-feira do mês.</p>
+      <p>Os Arquivos Secretos foram oficialmente anunciados no dia 20 de dezembro de 2025, antes do 9º episódio de Hexatombe.</p>
+      <p>ㅤ</p>
+      <p>Os pacotes de conteúdo são desenvolvidos por <a onclick="showTab('cellbit')">Cellbit</a>, Dan Ramos, Guilherme Dei Svaldi, Kali de Los Santos, Karen Soarele, Miguel Souza, Stefano P. e Thales "Bif" Cunha.</p>
+    </main>
+  </div>
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside style="width: auto;">
+      <div class="infobox-title">Arquivos Secretos</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/6/64/Capa_Arquivos_Secretos.png/revision/latest/scale-to-width-down/200?cb=20251225132107&path-prefix=pt-br">
+      <div class="infobox-row"><span>Exibição:</span><span><a href="https://site.jamboeditora.com.br/arquivos-secretos/">Jambo Editora</a>></span></div>
+      <div class="infobox-row"><span>Lançado em:</span><span>28 de janeiro de 2026</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="ordem_paranormal" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>A Ordem Paranormal (campanha)</h2>
+      <p><strong>A Ordem Paranormal,</strong> também chamada como Iniciação, é a primeira temporada da série Ordem Paranormal. É uma campanha de RPG de mesa baseada no sistema de The Esoterrorists (Os Esoterroristas, em português) de Robin D. Laws. Mestrada pelo streamer e youtuber <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Alexsander Kothe, Daniel Hartmann, Elizabeth Webber, Thiago Fritz.</p>
+      <p>Os dois episódios da campanha foram lançados no dia 29 de fevereiro e 7 de março de 2020 na Twitch. A série pode ser encontrada também no YouTube.</p>
+      <p>Em 18 de junho de 2022, durante o evento Segredos Revelados, foi anunciada uma adaptação da campanha para uma graphic novel, desenvolvida em conjunto com o roteirista Fábio Yabu, criador da série em quadrinhos online Combo Rangers e da franquia brasileira Princesas do Mar. As artes principais da graphic novel são feitas por Akila, também conhecido como Gabsu, um dos coloristas da série. Essa graphic novel, nomeada de Ordem Paranormal: Iniciação, foi lançada em 8 de maio de 2023.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">A Ordem Paranormal</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/9/90/Campanha_A_Ordem_Paranormal.png/revision/latest/scale-to-width-down/280?cb=20240402184838&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Luba (Daniel Hartmann)</li><li>Gabi Cattuzzo (Elizabeth Webber)</li><li>Rakin (Thiago Fritz)</li><li>LJoga (Alexsander Kothe)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>2 (Twitch)</li><li>3 (YouTube)</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>29 de fevereiro de 2020</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>07 de março de 2020</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="segredo_na_floresta" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>O Segredo na Floresta</h2>
+      <p><strong>O Segredo na Floresta</strong> é a segunda temporada da série <a onclick="showTab('home')">Ordem Paranormal</a>, continuação de <a onclick="showTab('ordem_paranormal')">A Ordem Paranormal</a>. É uma campanha de RPG de mesa baseada em uma versão adaptada do sistema Chamado de Cthulhu (do inglês, Call of Cthulhu). Mestrada pelo streamer <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Cesar Oliveira Cohen, Cristopher Cohen, Elizabeth Webber, Joui Jouki, Thiago Fritz e posteriormente Arthur Cervero.</p>
+      <p>A série era jogada ao vivo na Twitch, e durou de 11 de abril a 25 de julho de 2020, compreendendo 16 episódios de, em média, 3 a 4 horas cada. Os episódios podem ser encontrados também no YouTube, no canal Lives do Cellbit.</p>
+      <p>Em 1° de agosto de 2020, houve uma stream especial em que os jogadores se reuniram para discutir os eventos da temporada e seus personagens, além de elucidar as dúvidas dos espectadores e revelar alguns dos segredos que não foram descobertos ao longo da série.</p>
+      <p>Em 17 de setembro de 2023, durante o segundo Segredos Revelados, foi anunciado que, tal como Ordem Paranormal: Iniciação, essa campanha também terá sua adaptação para graphic novel separada por partes, sendo desenvolvida em conjunto com o roteirista Fábio Yabu, e também continuará com as artes principais feitas por Akila. Essa graphic novel foi nomeada de "O Segredo na Floresta - Parte 1".</p>
+      <p>Em 30 de agosto de 2024, foi anunciado a segunda parte da adaptação da temporada em graphic novel, nomeada como "O Segredo na Floresta - Parte 2" e com data de lançamento para 1 de outubro do mesmo ano.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">O Segredo na Floresta</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/3/30/Campanha_O_Segredo_na_Floresta.png/revision/latest/scale-to-width-down/280?cb=20240402184900&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Rakin (Thiago Fritz)</li><li>Luba (Joui Jouki)</li><li>Guaxinim (Arthur Cervero)</li><li>Calango (Cesar Oliveira Cohen e Miguel Cariad)</li><li>Gabi Cattuzzo (Elizabeth Webber e Mariana Larona)</li><li>LJoga (Cristopher Cohen e Alexsander Kothe)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Felps (O Ajudante)</li><li>Kalera (Eva van Gloss)</li><li>Leo Santi (Kenan Thomas)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>16ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>11 de abril de 2020</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>25 de julho de 2020</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="desconjuracao" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Ordem Paranormal: Desconjuração</h2>
+      <p><strong>Ordem Paranormal: Desconjuração</strong> é a terceira temporada da série <a onclick="showTab('home')">Ordem Paranormal</a>, continuação de <a onclick="showTab('segredo_na_floresta')">O Segredo na Floresta</a>. É uma campanha de RPG de mesa baseado em uma versão adaptada pelo mestre do sistema Chamado de Cthulhu (do inglês, Call of Cthulhu). Mestrada pelo streamer e diretor criativo de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Arthur Cervero, Beatrice Portinari, Dante, Elizabeth Webber, Erin Parker, Fernando Carvalho, Joui Jouki, Kaiser e Luciano Carvalho.</p>
+      <p>A campanha foi anunciada no dia 17 de outubro de 2020, após o ARG de Desconjuração e Enigma do Medo, na Twitch do Cellbit, tendo sua data de começo revelada para o dia 31 de outubro.</p>
+      <p>A temporada teve um total de 20 episódios, transmitidos às 18 horas de todo sábado na Twitch do Cellbit. Todos os episódios também estão disponíveis no YouTube, no canal Lives do Cellbit.</p>
+      <p>Em 29 de maio de 2021, houve uma stream especial em que os jogadores se reuniram para discutir os eventos da temporada e seus personagens, além de elucidar as dúvidas dos espectadores e revelar alguns dos segredos que não foram descobertos ao longo da série.</p>
+      <p>Em 15 de junho de 2025, Cellbit anunciou a adaptação em graphic novel dessa campanha, separada em partes como O Segredo na Floresta - Parte 1 e Parte 2. Ela foi desenvolvida em conjunto com o roteirista Fábio Yabu e com as artes principais feitas por Akila. Sua primeira parte, nomeada como "Desconjuração - Parte 1", teve seu lançamento oficial em 30 de agosto de 2025.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Ordem Paranormal: Desconjuração</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/9/91/Campanha_Desconjura%C3%A7%C3%A3o.png/revision/latest/scale-to-width-down/280?cb=20240402184915&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre e Kian)</li><li>Calango (Kaiser)</li><li>Gabi Cattuzzo (Elizabeth Webber)</li><li>Guaxinim (Arthur Cervero)</li><li>Kalera (Erin Parker)</li><li>LJoga (Fernando Carvalho e Luciano Carvalho)</li><li>Luba (Joui Jouki)</li><li>Rakin (Dante e Thiago Fritz)</li><li>Triz Pariz (Beatrice Portinari)</li><li>João Miranda (Gal)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Alanzoka (Johnny Tabasco)</li><li>Bastet (Salazar Lourenço)</li><li>Felps (Rubens Naluti)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>20ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>31 de outubro de 2020</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>22 de maio de 2021</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="calamidade" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Ordem Paranormal: Calamidade</h2>
+      <p><strong>Ordem Paranormal: Calamidade</strong> é a quarta temporada da série <a onclick="showTab('home')">Ordem Paranormal</a>, continuação de <a onclick="showTab('desconjuracao')">Ordem Paranormal: Desconjuração</a>. É uma campanha de RPG de mesa baseada no sistema de Ordem Paranormal RPG, criado pelo mestre junto da equipe de Skyfall RPG (Pedro Coimbra e Silvia Sala) e da equipe de Tormenta 20 (Felipe Della Corte e Guilherme Dei Svaldi). Mestrada pelo streamer, diretor criativo e roteirista de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por dois lados: do lado da Ordem, sendo Antônio Pontevedra, Arthur Cervero, Carina Leone, Dante, Rubens Naluti e posteriormente Joui Jouki; do lado de Kian, sendo Artemis Deordelin Rodrigues, Boris Lukic, Damir Lukic, Gal e Theodore Bagwell.</p>
+      <p>A campanha foi anunciada previamente no último episódio de Desconjuração, mas foi anunciada oficialmente após o ARG de Calamidade no dia 29 de agosto de 2021. De acordo com o vídeo de anúncio, essa é a primeira temporada de RPG do universo feita presencialmente.</p>
+      <p>Todos os episódios foram transmitidos às 18 horas de todo sábado na Twitch do Cellbit. Às terças, ocorria a reprise dos mesmos, também na Twitch, enquanto na quinta, eles eram disponibilizados no YouTube, no canal Lives do Cellbit. Como adicional da temporada, todas as quintas-feiras, às 17 horas na Twitch do Cellbit, ocorria um programa de perguntas e respostas sobre o RPG chamado Transcendendo, comandado por Leo Santi.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Ordem Paranormal: Calamidade</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/a/a3/Campanha_Calamidade.png/revision/latest/scale-to-width-down/280?cb=20240402184924&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre e Kian)</li><li>Calango (Antônio Pontevedra e Faustus)</li><li>Felps (Rubens Naluti e Amalia)</li><li>Gabi Cattuzzo (Carina Leone, Elizabeth Webber e Gaius)</li><li>Guaxinim (Arthur Cervero e Marius)</li><li>Luba (Joui Jouki e Celestine)</li><li>Rakin (Dante, Remus e Arnaldo Fritz)</li><li>João Miranda (Gal)</li><li>LJoga (Damir Lukic)</li><li>Mount (Boris Lukic)</li><li>Triz Pariz (Artemis Deordelin Rodrigues)</li><li>Zero (Theodore Bagwell)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Abelha (Dominic Sy Pierre)</li><li>Bastet (Henri)</li><li>Kalera (Yuki Saito)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>13ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>04 de setembro de 2021</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>27 de novembro de 2021</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="segredo_da_ilha" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>O Segredo na Ilha</h2>
+      <p><strong>O Segredo na Ilha</strong> é a primeira campanha spin-off da série <a onclick="showTab('home')">Ordem Paranormal</a>, É uma campanha de RPG de mesa baseada no sistema Ordem Paranormal RPG. Mestrada pelo streamer, diretor criativo e roteirista de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Amelie Florence, Bárbara Lima, Milo Castello, Olivier Florence e Wanderley Nascimento de Jesus Maria.</p>
+      <p>A campanha foi anunciada no dia 18 de junho de 2022 durante um evento especial na Twitch do Cellbit, como um dos quatro segredos que foram revelados. O Segredo na Ilha foi uma das três campanhas spin-offs anunciadas, tendo história e personagens diferentes da história principal de Ordem Paranormal. Como diferencial, nessa campanha, cada episódio equivaleu a um dia inteiro na história.</p>
+      <p>A temporada teve um total de 8 episódios, transmitidos às 18 horas de todo sábado na Twitch do Cellbit. Como diferencial, todos os episódios foram disponibilizados no canal oficial de Ordem Paranormal no YouTube.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">O segredo na Ilha</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/4/40/Campanha_O_Segredo_na_Ilha.png/revision/latest/scale-to-width-down/280?cb=20240402184936&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Beamom (Amelie Florence)</li><li>Cinemagrath (Milo Castello e Miguel Castello)</li><li>Gabi Cattuzzo (Bárbara Lima)</li><li>Goularte (Olivier Florence)</li><li>Rakin (Wanderley Nascimento)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Guaxinim (Arthur Cervero)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>8ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>25 de junho de 2022</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>13 de agosto de 2022</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="sinais_do_outro_lado" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Sinais do Outro Lado</h2>
+      <p><strong>Sinais do Outro Lado</strong> é a segunda campanha spin-off da série <a onclick="showTab('home')">Ordem Paranormal</a>, É uma campanha de RPG de mesa baseada no sistema Ordem Paranormal RPG. Mestrada pelo streamer, diretor criativo e roteirista de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Alexandre, Chico Albuquerque, Dara Venturini, Guilherme Santos e Lirio Tellini.</p>
+      <p>Previamente revelada durante o evento Segredos Revelados em 18 de junho de 2022, a campanha foi oficialmente anunciada no dia 20 de agosto de 2022, ao final de Revelando o Segredo na Ilha na Twitch do Cellbit, tendo sua data anunciada em 22 de outubro de 2022 para o sábado seguinte, dia 29 de outubro. Essa foi a segunda campanha spin-off das três anunciadas, tendo história e personagens diferentes da história principal de Ordem Paranormal.</p>
+      <p>A temporada teve um total de 7 episódios, transmitidos às 18h na Twitch do Cellbit. Além disso, o programa Transcendendo fez seu breve retorno, continuando a ser apresentado por Leo Santi.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Sinais do Outro Lado</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/2/23/Campanha_Sinais_do_Outro_Lado.png/revision/latest/scale-to-width-down/280?cb=20241220231529&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Carol Zaghetti (Dara Venturini)</li><li>Felps (Guilherme Santos)</li><li>Guaxinim (Alexandre)</li><li>LJoga (Chico Albuquerque)</li><li>Murilo Choquetta (Lirio Tellini)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Rakin (Arnaldo Fritz)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>7ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>29 de outubro de 2022</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>10 de dezembro de 2022</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="quarentena" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Ordem Paranormal: Quarentena</h2>
+      <p><strong>Ordem Paranormal: Quarentena</strong> é uma sessão especial de dois episódios da série <a onclick="showTab('home')">Ordem Paranormal</a>, É uma campanha de RPG two-shot baseada em Ordem Paranormal RPG, sistema oficial da marca, utilizando o suplemento Sobrevivendo ao Horror pela primeira vez. Mestrada pelo streamer, diretor criativo e roteirista de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por cinco criadores de conteúdo globais, interpretando Benito Camelo, Diego Thalles, Jeffrey Bacon, Lucie Pocharde e Luis Miguel Kennedy. Essa é a primeira campanha da série feita com criadores de conteúdo internacionais, tendo como língua principal o Inglês.</p>
+      <p>O especial foi anunciado no dia 17 de setembro de 2023, durante o segundo evento de Segredos Revelados, na Twitch do Cellbit, tendo a data da two-shot revelada para o sábado seguinte, dia 23.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Ordem Paranormal: Quarentena</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/e/e0/Campanha_Quarentena.png/revision/latest/scale-to-width-down/280?cb=20240402184817&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Baghera Jones (Lucie Pocharde)</li><li>Foolish (Jeffrey Bacon)</li><li>Pac (Diego Thalles)</li><li>Quackity (Benito Camelo)</li><li>Roier (Luis Miguel Kennedy)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Gabi Cattuzzo (Carol)</li><li>Rakin (Controlador aéreo)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>2ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>23 de setembro de 2023</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>30 de setembro de 2023</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="natal_macabro" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Ordem Paranormal: Natal Macabro</h2>
+      <p><strong>Ordem Paranormal: Natal Macabro</strong> é um especial de Natal de <a onclick="showTab('home')">Ordem Paranormal</a>, sendo um terror slasher. É uma campanha de RPG three-shot baseada em Ordem Paranormal RPG: Sobrevivendo ao Horror, suplemento do sistema oficial da marca. Mestrada pelo streamer, diretor criativo e roteirista de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Ayla Valença, Breno L. Nojard, Jorel Lagos, Jorge Lagos, Leandro, Lila Bonelli, Lucio Olani, Melissa Trovi, Mike, Nathalia Scompa, Ricardo Rocha Rodrigues e Shanyqua da Silva.</p>
+      <p>A série foi gravada e transmitida na Twitch e no YouTube simultaneamente. Ela foi anunciada no dia 18 de dezembro de 2024 na live especial de Segredos Revelados 3. Os episódios foram lançados em 21 de dezembro, 26 de dezembro e 30 de dezembro de 2024, sendo a primeira minissérie que teve seus episódios em um intervalo de tempo menor que uma semana.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Natal macabro</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/4/41/Campanha_Natal_Macabro.png/revision/latest/scale-to-width-down/280?cb=20241220230720&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Bela Tiemiau (Lila Bonelli)</li><li>Brino (Mike)</li><li>Carol Zaghetti (Nathalia Scompa)</li><li>Cinemagrath (Jorel Lagos/Caçador de Gente)</li><li>Felps (Ricardo Rocha Rodrigues)</li><li>Guaxinim (Leandro)</li><li>Guto Barbosa (Breno L. Nojard)</li><li>Jinki (Shanyqua da Silva)</li><li>LJoga (Jorge Lagos)</li><li>Lorena Orsi (Melissa Trovi)</li><li>Maethe (Ayla Valença)</li><li><a onclick="showTab('t3ddy')">T3ddy</a> (Lucio Olani)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Bastet (Policial de Inquisidor do Vale)</li><li>Karen Padrão (Agatha Volkomenn)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>3ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>21 de dezembro de 2024</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>30 de dezembro de 2024</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="hexatombe" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Hexatombe</h2>
+      <p><strong>Hexatombe</strong> é a terceira campanha spin-off da série <a onclick="showTab('home')">Ordem Paranormal</a>, É uma campanha de RPG de mesa baseada em Ordem Paranormal RPG: Sobrevivendo ao Horror, suplemento do sistema oficial da marca. Mestrada pelo streamer, roteirista e diretor criativo de Enigma do Medo, <a onclick="showTab('cellbit')">Cellbit</a>, é protagonizada por Tuco Belez no corpo de Dalmo Magno, o <strong>Colosso</strong>; Maria Helena Rodrigues no corpo de Park Jae-Yoon, o <strong>X</strong>; Jasper no corpo de Jonas Aguiar, o <strong>Mutilador Noturno</strong>; Lena Viegas no corpo de Kemi, a <strong>Fantasma</strong>; Remi no corpo de Labirinto, o <strong>???</strong>; e Juan, anteriormente conhecido como <strong>Henri</strong>.</p>
+      <p>Previamente revelada durante o evento Segredos Revelados em 18 de junho de 2022, e referenciada no final de Natal Macabro, a campanha foi oficialmente e inesperadamente anunciada no dia 12 de setembro de 2025 para a data de 25 de outubro. Essa é a terceira e última campanha spin-off das três anunciadas, tendo história e personagens diferentes da história principal de Ordem Paranormal.</p>
+    </main>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Hexatombe</div>
+      <img style="border-radius: 5px;" src="https://static.wikia.nocookie.net/ordemparanormal/images/2/21/Campanha_Hexatombe.png/revision/latest/scale-to-width-down/280?cb=20250913002151&path-prefix=pt-br">
+      <div class="infobox-row"><span>Elenco:</span><span><ul><li>Cellbit (Mestre)</li><li>Abelha (Dalmo Magno/Tuco Belez)</li><li>Bagi (Jae-Yoon/Maria Helena Rodrigues)</li><li>Bastet (Henri/Juan)</li><li>Beamom (Kemi/Lena Viegas)</li><li>Calígrafo (Labirinto/Remi)</li><li>Cereaw (Jonas Aguiar/Jasper)</li></ul></span></div>
+      <div class="infobox-row"><span>Participações especiais</span><span><ul><li>Guaxinim (Arthur Cervero)</li><li>Guilherme Lopes (Harpia)</li><li>João Victor Granja (Pomba)</li><li>Karen Padrão (Agatha Volkomenn)</li><li>LJoga (Damir Lukic)</li><li>Rakin (Dante)</li></ul></span></div>
+      <div class="infobox-row"><span>N° de episódios:</span><span><ul><li>10ㅤㅤㅤㅤ</li></ul></span></div>
+      <div class="infobox-row"><span>Exibição</span><span><ul><li>Twitch</li><li>Kick</li><li>YouTube</li></ul></span></div>
+      <div class="infobox-row"><span>Primeira exibição:</span><span>25 de outubro de 2025</span></div>
+      <div class="infobox-row"><span>Última exibição:</span><span>27 de dezembro de 2025</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="cellbit" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Cellbit</h2>
+      <p><strong>Rafael Lange</strong>, mais conhecido como <strong>Cellbit</strong>, é um criador de conteúdo nas plataformas YouTube e Twitch.</p>
+      <p>Ele é o criador do universo de <a onclick="showTab('ordem_paranormal')">Ordem Paranormal</a>, atuando como roteirista e mestre no RPG de mesa, e também como diretor criativo do jogo Enigma do Medo, que é ambientado no mesmo universo.</p>
+      <p>Como mestre no RPG de mesa, Cellbit é responsável pela atuação de todos os personagens <strong>não-jogáveis</strong> da série. Ele também é o intérprete de Kian, após o mesmo se tornar um marcado no 20º episódio de Desconjuração.</p>
+    </main>
+  </div>
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Cellbit</div>
+      <img style="border-radius: 5px;" src="cellbit_laço.jpeg">
+      <div class="infobox-row"><span>Nome:</span><span>Rafael Lange</span></div>
+      <div class="infobox-row"><span>Naturalidade:</span><span>Florianópolis, Santa Catarina</span></div>
+      <div class="infobox-row"><span>Nascimento:</span><span>11 de fevereiro de 1997 (29 anos)</span></div>
+      <div class="infobox-row"><span>Ocupação:</span><span>Streamer, Criador de conteúdo, Diretor criativo</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="t3ddy" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>T3ddy</h2>
+      <p><strong>Lucas Olioti</strong>, mais conhecido como <strong>T3ddy</strong>, é um youtuber e criador de conteúdo.</p>
+      <p>T3ddy é um dos jogadores de <a onclick="showTab('ordem_paranormal')">Ordem Paranormal</a>, tendo participado do especial em <a onclick="showTab('natal_macabro')">Natal Macabro</a> como Lucio Olani.</p>
+    </main>
+  </div>
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">T3ddy</div>
+      <img style="border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA18ZOWZvW4vvnae5_kHp-6fhBTy7oDYDiCg&s">
+      <div class="infobox-row"><span>Nome:</span><span>Lucas Olioti</span></div>
+      <div class="infobox-row"><span>Naturalidade:</span><span>Ribeirão Preto, São Paulo</span></div>
+      <div class="infobox-row"><span>Nascimento:</span><span>16 de dezembro de 1994 (31 anos)</span></div>
+      <div class="infobox-row"><span>Ocupação:</span><span><ul><li>Youtuber</li><li>Criador de conteúdo</li></ul></span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="verissimo" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="border-radius: 10px; border: 1px solid crimson;">
+      <button class="back" onclick="showTab('home')">← Voltar</button>
+      <h2>Senhor Veríssimo</h2>
+      <p><strong>Senhor Veríssimo</strong>, é um personagem principal do universo de Ordem Paranormal. Seu verdadeiro nome ainda é desconhecido, porém essa iteração é o mais comumente associado a esse nome, que era utilizado como designação genérica para todos os agentes da Ordo Realitas. Ele é o líder da Ordem e responsável por mandar os personagens a suas missões em todas as temporadas, além de ter treinado vários agentes da Ordem, incluindo sua filha.</p>
+      <p>Sabe-se que seu desaparecimento é o incidente que desencadeia os eventos de Enigma do Medo, que faz com que Mia, sua filha, saia à sua procura.</p>
+    </main>
+  </div>
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+    <aside>
+      <div class="infobox-title">Senhor Veríssimo</div>
+      <img style="border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPYr6oEQ0hYHCpygQ8Lks8pILkEnq_M_KXWA&s">
+      <div class="infobox-row"><span>Intérprete:</span><span>Rafael “Cellbit” Lange (Campanhas do RPG), Guilherme Briggs (Enigma do Medo).</span></div>
+      <div class="infobox-row"><span>Relações:</span><span>Mia (filha), † Sofia Besatt (amante), † Senhor Veríssimo (mentor).</span></div>
+      <div class="infobox-row"><span>Ocupação:</span><span>Líder da Ordo Realitas, Investigador Paranormal.</span></div>
+      <div class="infobox-row"><span>Classe:</span><span>Combatente.</span></div>
+      <div class="infobox-row"><span>Trilha:</span><span>Comandante de Campo.</span></div>
+      <div class="infobox-row"><span>Associação:</span><span>Ordo Realitas (líder), Aniquiladores (anteriormente), Equipe Elite (anteriormente).</span></div>
+      <div class="infobox-row"><span>Status:</span><span>Vivo.</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="personagens" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/f/f3/AlexIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031551&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/79/DanielIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031553&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/2/2e/LizIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031554&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/af/ThiagoIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031555&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="aop" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/f/f3/AlexIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031551&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/79/DanielIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031553&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/2/2e/LizIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031554&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/af/ThiagoIconAOP.png/revision/latest/scale-to-width-down/250?cb=20260403031555&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="osnf" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/8e/ArthurIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031700&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/f/fa/CesarIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031705&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/f/f6/CrisIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031710&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/e/ea/LizIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031706&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/6/6b/JouiIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031708&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/6/67/ThiagoIconOSNF.png/revision/latest/scale-to-width-down/250?cb=20260403031707&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="opd" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/86/ArthurIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031852&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/9/99/BeatriceIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031859&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/4/4c/DanteIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031901&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/b/b8/LizIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031855&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/b/b2/ErinIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031902&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3a/FernandoIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031903&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/1/1f/JouiIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031856&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/8e/KaiserIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031853&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3e/LucianoIconOPD.png/revision/latest/scale-to-width-down/250?cb=20260403031904&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="opc" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/89/AntonioIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032127&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3d/ArtemisIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032125&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/ac/ArthurIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032119&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/ae/BorisIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032128&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/a2/CarinaIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032130&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/c/cb/DamirIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032131&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/6/6f/DanteIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032124&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/e/ed/GalIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032133&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/6/68/JouiIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032122&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/76/RubensIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032135&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/d/d8/TbagIconOPC.png/revision/latest/scale-to-width-down/250?cb=20260403032136&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="osni" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3d/AmelieIconOSNI.png/revision/latest/scale-to-width-down/250?cb=20260403032241&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/39/BarbaraIconOSNI.png/revision/latest/scale-to-width-down/250?cb=20260403032243&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/a9/MiloIconOSNI.png/revision/latest/scale-to-width-down/250?cb=20260403032244&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/5/5c/OlivierIconOSNI.png/revision/latest/scale-to-width-down/250?cb=20260403032245&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/2/25/WanderleyIconOSNI.png/revision/latest/scale-to-width-down/250?cb=20260403032247&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="sdol" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3c/AlexandreIconSDOL.png/revision/latest/scale-to-width-down/250?cb=20260403032347&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/e/e7/ChicoIconSDOL.png/revision/latest/scale-to-width-down/250?cb=20260403032349&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/4/48/DaraIconSDOL.png/revision/latest/scale-to-width-down/250?cb=20260403032350&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/9/92/GuizoIconSDOL.png/revision/latest/scale-to-width-down/250?cb=20260403032351&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/f/fd/LirioIconSDOL.png/revision/latest/scale-to-width-down/250?cb=20260403032353&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="opq" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/7b/BenitoIconOPQ.png/revision/latest/scale-to-width-down/250?cb=20260403032457&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/8c/DiegoIconOPQ.png/revision/latest/scale-to-width-down/250?cb=20260403032500&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/6/60/JeffreyIconOPQ.png/revision/latest/scale-to-width-down/250?cb=20260403032501&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/70/LucieIconOPQ.png/revision/latest/scale-to-width-down/250?cb=20260403032503&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/b/b0/LuisIconOPQ.png/revision/latest/scale-to-width-down/250?cb=20260403032504&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="opnm" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/30/AylaIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032651&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/88/BrenoIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032652&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/4/4a/JorelIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032654&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/b/bc/JorgeIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032655&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3b/LeandroIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032657&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/8/85/LilaIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032659&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/5/57/LucioIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032700&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3d/MelissaIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032702&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/75/MikeIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032704&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/9/9b/NathaliaIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032706&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/d/db/RicardoIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032707&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/7f/ShanyquaIconOPNM.png/revision/latest/scale-to-width-down/250?cb=20260403032709&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="hex" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Personagens</h2>
+      <nav>
+        <button onclick="showTab('aop')">AOP/OPI</button>
+        <button onclick="showTab('osnf')">OSNF</button>
+        <button onclick="showTab('opd')">OPD</button>
+        <button onclick="showTab('opc')">OPC</button>
+        <button onclick="showTab('osni')">OSNI</button>
+        <button onclick="showTab('sdol')">SDOL</button>
+        <button onclick="showTab('opq')">OPQ</button>
+        <button onclick="showTab('opnm')">OPNM</button>
+        <button onclick="showTab('hex')">HEX</button>
+      </nav>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/0/03/Dalmoteste.gif/revision/latest/scale-to-width-down/250?cb=20251127181033&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/3/3f/Henriteste.gif/revision/latest/scale-to-width-down/250?cb=20260116172819&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/c/c7/Jaeteste.gif/revision/latest/scale-to-width-down/250?cb=20251219225955&path-prefix=pt-br"></span>
+      <span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/a/a5/Aguiarteste.gif/revision/latest/scale-to-width-down/250?cb=20251219230606&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/1/1c/Kemiteste.gif/revision/latest/scale-to-width-down/250?cb=20251219230332&path-prefix=pt-br"></span><span><img src="https://static.wikia.nocookie.net/ordemparanormal/images/7/7d/Labirintoteste.gif/revision/latest/scale-to-width-down/250?cb=20251219230135&path-prefix=pt-br"></span>
+    </main>
+  </div>
+</div>
+
+<div id="classes" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Especialista:</h2>
+      <p>Especialistas em pericia e versatividade. (Suporte/Inteligência)</p>
+      <p>Focado em inteligência e agilidade, especialista em perícia, investigação e suporte técnico. Possue bônus para perícias e uso de arma de fogo.</p>
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Combatente:</h2>
+      <p>O combatente foca em força/vigor e defesa. (Linha de frente)</p>
+      <p>Otimo para linha de frente, com mais vida e proficiência em armas.</p>
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Ocultista:</h2>
+      <p>Ocultista foca em intelectuo e rituais. (Dano paranormal e suporte)</p>
+      <p>Focado em intelectuo e presença, estudioso do sobrentural, focado em controlar elementos e rituais paranormais. Geralmente possui mair perícias (Incluindo ocultismo e vontade) +Intelecto mas -Defesa e vida.</p>
+    </main>
+  </div>
+</div>
+
+<div id="rituais" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid crimson;">
+      <h2>Rituais de Dano e Dano em Área</h2>
+      <ul>
+        <li>Cinerária (Medo): É um dos rituais mais icônicos e estratégicos, pertencente ao elemento medo. Ele não serve para causar dano direto, mas sim para "preparar o terreno"  e tornar o ambiente muito mais perigoso para quem enfrenta o paranormal.</li>
+        <li>Decadência (Morte): Um dos melhores rituais de dano, especialmente na versão Verdadeira, que causa dano de morte em área ao redor do conjurador.</li>
+        <li>Descarnar (Morte): Bastante utilizado para causar dano e aplicar penalidades aos inimigos.</li>
+        <li>Eletrocussão (Energia): Muito popular para dano elétrico, considerado forte contra diversas criaturas.</li>
+      </ul>
+      <h2>Rituais de Aprimoramento (Buffs)</h2>
+      <ul>
+        <li>Amaldiçoar Arma (Conhecimento/Outros): Essencial para aumentar a chance de acerto e dano das armas, podendo ser focado na margem de ameaça para críticos.</li>
+        <li>Velocidade Mortal (Morte): Um dos rituais mais poderosos do jogo, garantindo ações adicionais por turno, aumentando drasticamente o potencial de dano do grupo.</li>
+        <li>Tela de Ruído (Energia): A principal defesa dos ocultistas, reduzindo danos massivamente.</li>
+      </ul>
+    </main>
+  </div>
+</div>
+
+<div id="elementos" class="container section">
+  <div style="flex: 3; display: flex; flex-direction: column; gap: 20px;">
+    <main style="flex: none; border-radius: 10px; border: 1px solid red;">
+      <h2>Sangue</h2>
+      <ul>
+        <li>Sentimento: Dor, obsessão, fúria.</li>
+        <li>Cor: vermelho</li>
+        <li>Resumo: É a violência e a carnificina. Criaturas de sangue são agressivas e fortes.</li>
+        <li>Rituais famosos: Transcender, Pele de Sangue.</li>
+        <li>Criaturas: Zumbi de Sangue, Carniçal.</li>
+      </ul>
+      <img style="border-radius: 15px; border: 1px solid red;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1o_kAofsO-t4GcotcGXMYSmAbDUuTrnJfvg&s">
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid grey;">
+      <h2>Morte</h2>
+      <ul>
+        <li>Sentimento: Passagem, luto, fim.</li>
+        <li>Cor: Preto/Cinza</li>
+        <li>Resumo: Lida com espírito, tempo e distorção da realidade. è silenciosa e assustadora.</li>
+        <li>Rituais famosos: Amaldiçoar Tecnologia, Distorcer Aparência.</li>
+        <li>Criaturas: Sussurador, Enraizado.</li>
+      </ul>
+      <img style="border-radius: 15px; border: 1px solid grey;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1NM-K1oHXOj01UaXbu4wFfjTH9ujcljZajg&s">
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid yellow;">
+      <h2>Conhecimento</h2>
+      <ul>
+        <li>Sentimento: Busca por respostas, paranoia.</li>
+        <li>Cor: Amarelo</li>
+        <li>Resumo: É a loucura de saber demais.</li>
+        <li>Rituais famosos: Paralisia, Invisibilidade.</li>
+        <li>Criaturas: Aberração Intelectual, Pertubado de Conhecimento.</li>
+      </ul>
+      <img style="border-radius: 15px; border: 1px solid yellow;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw7IBZT2CenJEKwxxtiucKOfMYnqlBYS-_8g&s">
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid purple;">
+      <h2>Energia</h2>
+      <ul>
+        <li>Sentimento: Caos, transformação, imprevisibilidade.</li>
+        <li>Cor: Roxo</li>
+        <li>Resumo: É o elemento mais instável. Descontrolado e anárquico. Mexe com eletricidade e matéria.</li>
+        <li>Rituais famosos: Distúrbio de Energia, Descarnar.</li>
+        <li>Criaturas: Anárquico, Enérgico.</li>
+      </ul>
+      <img style="border-radius: 15px; border: 1px solid purple;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJy16RFwBttdPRPCA_IIluoRgasSD8Cc39Qg&s">
+    </main>
+
+    <main style="flex: none; border-radius: 10px; border: 1px solid white;">
+      <h2>Medo</h2>
+      <ul>
+        <li>Sentimento: O próprio Medo. O fim.</li>
+        <li>Cor: Branco/Transparente</li>
+        <li>Resumo: É o 5º elemento. O mais raro e poderoso. Só aparece na Calamidade. Une todos os outros.</li>
+        <li>Rituai famosos: Cinerária, Lembrar.</li>
+        <li>Criaturas: Deus da Morte, Degolificada.</li>
+      </ul>
+      <img style="border-radius: 15px; border: 1px solid white;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzu1lnG8dJ-j0bbUqGjjEojauB657pQ2N9yA&s">
+    </main>
+  </div>
+</div>
+
+<script>
+function showTab(id) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(sec => sec.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+<footer style="text-align: center; padding: 20px; background-color: #1a1a1a; color: #7c7c7c; font-family: serif; font-style: italic;">
+  <p style="margin: 0; font-size: 14px;">
+      DS-Vanguards &copy; 2026. Todos os direitos reservados.
+  </p>
+</footer>
+
+</body>
+</html>
